@@ -1,0 +1,36 @@
+.navbar{
+    height: 68px;
+    background-color: #f8f8f8;
+    margin-bottom: 0;
+}
+.container-fluid{
+    height: 68px;
+    background-color: #f8f8f8;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color:#ff9d00 ;
+    color: white;
+}
+.logo{
+    margin-left: 90px;
+}
+.head_middle{
+    margin-left: 20px;
+}
+ul li{
+    height: 68px;
+    line-height: 68px;
+  }
+ul a {
+    display: inline;
+    text-align: center;
+    color: black;
+}
+.head_right{
+    margin-right: 69px;
+}
+.bg:hover{
+    background: #ff9d00;
+    color: white;
+}

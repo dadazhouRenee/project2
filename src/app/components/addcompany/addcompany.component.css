@@ -1,0 +1,72 @@
+.addcompany{
+    margin-top: 64px;
+}
+.input-group{
+    float: left;
+}
+.shouji{
+    margin-left: 15px;
+}
+.qq{
+    margin-left: 15px; 
+}
+.weixin{
+    margin-left: 15px; 
+}
+.input-group-addon{
+    background-color: white;
+    border-right: 0;
+}
+.shouji input{
+    border-left: 0;
+}
+.qq input{
+    border-left: 0;
+}
+.weixin input{
+    border-left: 0;
+}
+.choosewrite{
+    line-height: 34px;
+}
+.title{
+    margin-bottom: 38px;
+}
+.title_left{
+    font-size: 20px;
+    text-align: right;
+}
+.title_right{
+    color: #777777;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+}
+#descibe{
+  width:90%;
+  height: 242px;
+  text-align: left;
+}
+.limit_txt,.duration_txt{
+    height: 40px;
+    line-height: 40px;
+}
+.addimg{
+    width: 190px;
+    height: 184px;
+    margin-bottom: 22px;
+}
+.addimg img{
+    width: 100%;
+    height: 100%;
+}
+.coverimg_btn{
+    width: 136px;
+    height: 34px;
+    background: #ff9d00;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 34px;
+}

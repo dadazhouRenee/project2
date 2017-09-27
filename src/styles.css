@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.swiper-pagination{
+    width: 100%!important;
+    height: 74px!important;
+    background: rgba(255,255,255,0.5)!important;
+}
+.swiper-pagination .swiper-pagination-bullet{
+    width: 102px!important;
+    height: 0px!important;
+    opacity: 1!important;
+}
+.swiper-pagination img{
+    width: 102px!important;
+    height: 62px!important;
+    margin:5px auto!important;
+    border: 1px solid #86898c!important;
+    border-radius: 5px;
+    opacity: 1!important;
+}
+.swiper-pagination-bullet-active img{
+    border-radius: 8px;
+    border: 3px solid #ff9d00!important;
+}

@@ -1,0 +1,125 @@
+<div class="container addcompany">
+  <!-- 标题开始 -->
+  <div class="row title">
+    <div class="col-xs-2 col-sm-2 col-lg-2 title_left">
+      发布结伴
+    </div>
+    <div class="col-xs-10 col-sm-10 col-lg-10 title_right">
+      （一个真诚的请求，才会赢得更多靠谱的旅伴）
+    </div>
+  </div>
+  <!-- 标题结束 -->
+  <!-- 表单开始 -->
+  <form class="form-horizontal">
+      <!-- 活动标题 -->
+      <div class="form-group">
+        <label for="title" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+          <span style="color:red">*</span>活动标题
+        </label>
+        <div class="col-xs-10 col-sm-10 col-lg-10">
+          <input type="text" class="form-control" id="title" placeholder="一句话开始一段靠谱的旅程">
+        </div>
+      </div>
+      <!-- 联系方式 -->
+      <div class="form-group">
+          <label for="contact" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>联系方式
+          </label>
+          <div class="input-group col-xs-2 col-sm-2 col-lg-2 shouji">
+              <span class="input-group-addon">手机/</span>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="input-group col-xs-2 col-sm-2 col-lg-2 qq">
+              <span class="input-group-addon">QQ/</span>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="input-group col-xs-2 col-sm-2 col-lg-2 weixin">
+              <span class="input-group-addon">微信/</span>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="col-xs-2 col-sm-2 col-lg-2 choosewrite">
+            (可选填)
+          </div>
+         
+      </div>
+      <!-- 目的地 -->
+      <div class="form-group">
+          <label for="dest" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>目的地
+          </label>
+          <div class="col-xs-6 col-sm-6 col-lg-6">
+            <input type="text" class="form-control" id="dest" placeholder="请输入目的地">
+          </div>
+      </div>
+      <!-- 出发地 -->
+      <div class="form-group">
+          <label for="startplace" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>出发地
+          </label>
+          <div class="col-xs-6 col-sm-6 col-lg-6">
+            <input type="text" class="form-control" id="startplace" placeholder="输入出发地">
+          </div>
+      </div>
+      <!-- 出发时间 -->
+      <div class="form-group">
+          <label for="startdate" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>出发时间
+          </label>
+          <div class="col-xs-6 col-sm-6 col-lg-6">
+            <input type="text" class="form-control" id="datepicker" placeholder="出发日期">
+          </div>
+      </div>
+      <!-- 活动天数 -->
+      <div class="form-group">
+          <label for="duration" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>活动天数
+          </label>
+          <div class="col-xs-6 col-sm-6 col-lg-6">
+            <input type="text" class="form-control" id="duration">
+          </div>
+          <div class="col-xs-1 col-sm-1 col-lg-1 duration_txt">
+              天
+          </div>
+      </div>
+      <!-- 限制人数 -->
+      <div class="form-group">
+          <label for="limit" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>限制人数
+          </label>
+          <div class="col-xs-6 col-sm-6 col-lg-6">
+            <input type="text" class="form-control" id="limit">
+          </div>
+          <div class="col-xs-1 col-sm-1 col-lg-1 limit_txt">
+            人
+          </div>
+      </div>
+      <!-- 结伴描述 -->
+      <div class="form-group ">
+          <label for="descibe" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>结伴描述
+          </label>
+          <div class="col-xs-10 col-sm-10 col-lg-10">
+            <textarea  id="descibe" placeholder="尽可能详细讲你的意向说清楚，除非你愿意尝试下边的:
+a.如果你想结伴无人问津
+b.如果你想浪费更多时间在逐个沟通相同的问题
+c.如果你想让旅途遇到猪队友"></textarea>
+          </div>
+      </div>
+      <!-- 封面图片 -->
+      <div class="form-group">
+          <label for="coverimg" class="col-xs-2 col-sm-2 col-lg-2 control-label"> 
+            <span style="color:red">*</span>封面图片
+          </label>
+          <div class="col-xs-4 col-sm-2 col-lg-1">
+              <div class="addimg">
+                <img src="assets/img/add.png">
+              </div>
+              <div class="coverimg_btn">
+                发表结伴
+              </div>
+          </div>
+      </div>
+
+    </form>
+  <!-- 表单结束 -->
+</div>

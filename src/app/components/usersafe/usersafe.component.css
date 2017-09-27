@@ -1,0 +1,37 @@
+.all{
+    margin-top: 45px;
+}
+.bs{
+    height: 40px;
+    
+    line-height: 40px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    color:#666666;
+    font-size: 14px;
+}
+.bs a{
+    color:#666666;
+}
+.bs a:hover,:link{
+    text-decoration: none;
+}
+.bactive{
+    border-radius: 5px;
+    background: #ffa800;
+    color:white;
+}
+.bactive a{
+    color:white;
+}
+.title{
+    font-size: 20px;
+}
+.save_btn{
+    background: #ff9d00;
+    color: white;
+}
+.sex{
+    text-align: right;
+}

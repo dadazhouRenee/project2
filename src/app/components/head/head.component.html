@@ -1,0 +1,42 @@
+
+  <nav class="navbar">
+    <div class="container-fluid">
+        <!-- logo部分 -->
+        <div class="navbar-header logo">
+          <img src="assets/img/logo.png">
+        </div>
+        <!-- 导航条中部head_middle -->
+        <ul class="nav navbar-nav head_middle">
+          <li class="bg"><a routerLink="/tourindex">游记 </a></li>
+          <li class="bg"><a routerLink="/companyindex">结伴而行</a></li>
+          <li class="dropdown bg">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              预留标签 
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu bg">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- 导航条右部 head_right-->
+        <ul class="nav navbar-nav navbar-right head_right">
+          <li *ngIf="!userStatus"><a routerLink="/login">登录</a></li>
+          <li *ngIf="!userStatus"><a routerLink="/regist">注册</a></li>
+          <li class="dropdown" *ngIf="userStatus">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img [src]="addUrl(user.userImgUrl)">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/addtour"><span class="glyphicon glyphicon-edit"></span> 发布游记</a></li>
+              <li><a routerLink="/addcompany"><span class="glyphicon glyphicon-edit"></span> 发布结伴</a></li>
+              <li><a routerLink="/mytour"><span class="glyphicon glyphicon-edit"></span> 我的发布</a></li>
+              <li><a routerLink="/usersafe"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
+              <li (click)="quit()"><a><span class="glyphicon glyphicon-off"></span> 退出</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+  </nav>

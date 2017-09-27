@@ -1,0 +1,46 @@
+<div class="bg"></div>
+<div class="container-fluid">
+  <div class="row">
+     <div class="main center-block">
+        <div class="logo">
+          <img src="assets/img/logomin.png">
+        </div>
+        <div class="content">
+          <div class="content_top">
+            <form role="form">
+              <div class="form-group">
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="您的手机号" [(ngModel)]="userTel" (focus)="doClear()" (blur)="this.isShow=!this.isShow;">
+              </div>
+              <div *ngIf="isShow" [ngClass]="styleClass">
+                {{msg}} &nbsp;&nbsp; {{password}}
+              </div>
+            </form>
+            <div class="register" (click)="doRegist()">立即注册</div>
+          </div>
+          <div class="line"></div>
+          <div class="content_bottom">
+            <p>用合作网站账户直接登录</p>
+            <div class="website">
+              <div class="weibo">
+                <div></div>
+                <span>微博</span>
+              </div>
+              <div class="qq">
+                  <div></div>
+                  <span>QQ</span>
+              </div>
+              <div class="wechat">
+                  <div></div>
+                  <span>微信</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="footer">
+          已经注册？
+          <a routerLink="/login">马上登录</a>
+        </div>
+     </div>
+  </div>
+</div>

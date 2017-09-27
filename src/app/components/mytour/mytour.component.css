@@ -1,0 +1,44 @@
+.all{
+    margin-top: 45px;
+}
+.bs{
+    height: 40px;
+    
+    line-height: 40px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    color:#666666;
+    font-size: 14px;
+}
+.bs a{
+    color:#666666;
+}
+.bs a:hover,:link{
+    text-decoration: none;
+}
+.bactive{
+    border-radius: 5px;
+    background: #ffa800;
+    color:white;
+}
+.bactive a{
+    color:white;
+}
+.title{
+    font-size: 20px;
+}
+.each_img{
+    height: 100px;
+}
+.each_img img{
+    width: 160px;
+    height: 100px;
+    border-radius: 5px;
+}
+.each_content p{
+    font-size: 18px;
+}
+.each_content button{
+    margin-top: 20px;
+}

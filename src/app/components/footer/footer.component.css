@@ -1,0 +1,13 @@
+.container-fluid{
+    height: 58px;
+    background: #2f2f2f;
+}
+.txt{
+    color:white;
+    text-align: center;
+    line-height: 58px;
+    font-size: 12px;
+}
+.author{
+    margin-left: 15px;
+}
