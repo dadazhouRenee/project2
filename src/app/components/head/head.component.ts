@@ -23,14 +23,6 @@ export class HeadComponent implements OnInit {
       this.user = {};
     });
   }
-  //一定要有返回值  这个在项目bulid前要删掉
-  addUrl(url:string){
-    // console.log(url);
-    if(url===undefined){
-      return "";
-    }
-    return "http://127.0.0.1/tournote/img/"+url;
-  }
   quit(){
     this.us.quit().subscribe();
     // this.router.navigate[('/tourindex')];

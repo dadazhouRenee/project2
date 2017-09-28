@@ -23,6 +23,9 @@ import { UsersafeComponent } from './components/usersafe/usersafe.component';
 import { UserService } from './services/user/user.service';
 import { MycompanyComponent } from './components/mycompany/mycompany.component';
 import { MytourComponent } from './components/mytour/mytour.component';
+import { TournoteService } from './services/tournote/tournote.service';
+import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload'
 
 @NgModule({
   declarations: [
@@ -50,11 +53,14 @@ import { MytourComponent } from './components/mytour/mytour.component';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    UEditorModule
+    UEditorModule,
+    CommonModule,
+    FileUploadModule
   ],
   providers: [
     UEditorConfig,
-    UserService
+    UserService,
+    TournoteService
   ],
   bootstrap: [AppComponent]
 })

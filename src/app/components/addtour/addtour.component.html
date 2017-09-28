@@ -1,9 +1,10 @@
 <div class="container-fluid header">
   <div class="row">
     <div class="col-lg-12 col-xs-12 head">
-      <img src="assets/img/page_default.jpg">
-        <div class="head_content">
-          <img src="assets/img/addtop.png" alt="">
+      <img src="{{imgUrl}}" >
+        <div class="head_content"> 
+          <input #file type="file" style="display:none" ng2FileSelect [uploader]="uploader" (change)="selectFile($event)">
+          <img src="assets/img/addtop.png" (click)="clickFile()">
           <p class="first">设置游记头图</p>
           <p class="second">图片建议选择尺寸大小1680px的高清大图，如相机原图</p>
         </div>
@@ -19,7 +20,7 @@
               <span style="color:red">*</span>游记标题
           </label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="title">
+            <input type="text" class="form-control" name="title" id="title" [(ngModel)]="tour.title">
           </div>
         </div>
         <div class="form-group">
@@ -27,11 +28,12 @@
             <span style="color:red">*</span>游记分类
           </label>
           <div class="col-sm-4 col-lg-4">
-            <select class="form-control">
-                <option>出游攻略</option>
-                <option>点点滴滴</option>
-                <option>旅游行记</option>
-                <option>所见所闻</option>
+            <select class="form-control" [(ngModel)]="tour.type" name="type">
+                <option value="">请选择</option>
+                <option value="旅游攻略">出游攻略</option>
+                <option value="点点滴滴">点点滴滴</option>
+                <option value="旅游行记">旅游行记</option>
+                <option value="所见所闻">所见所闻</option>
               </select>
           </div>
         </div>
@@ -39,9 +41,10 @@
       <!-- ueditor -->
       <div class="row">
         <div class="col-xs-11 col-sm-11 col-sm-offset-1 col-lg-11 ued">
-            <ueditor [config]="cfg"></ueditor>
+            <ueditor [config]="cfg" #ue></ueditor>
         </div>
       </div>
+      <button class="btn pull-right" style="background:#ff9d00;color:white;" (click)="getContent()">添加游记</button>
   </div>
 </div>
 <!-- 填写内容结束 -->

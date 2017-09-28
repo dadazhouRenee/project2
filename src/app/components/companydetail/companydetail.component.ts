@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-companydetail',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanydetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router :Router,private us:UserService) { }
 
   ngOnInit() {
   }

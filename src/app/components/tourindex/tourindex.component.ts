@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
 declare var $: any;
 declare var Swiper:any;
 @Component({
@@ -9,7 +10,7 @@ declare var Swiper:any;
 })
 export class TourindexComponent implements OnInit {
 
-  constructor(private router :Router) { }
+  constructor(private router :Router,private us:UserService) { }
 
   ngOnInit() {
     var swiper=new Swiper(".swiper-container",{
@@ -25,7 +26,16 @@ export class TourindexComponent implements OnInit {
     });
   }
   toAddTour(){
-    this.router.navigate(['/addtour']);
+    this.us.checkLogin().subscribe((data)=>{
+      let result = data.json();
+      if(result.status){
+        this.router.navigate(['/addtour']);
+        return;
+      }else{
+        this.router.navigate(['/login']);
+      }
+    });
+    
   }
   toTourDetail(){
     this.router.navigate(['/tourdetail']);    

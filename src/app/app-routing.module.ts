@@ -11,6 +11,7 @@ import { RegistComponent } from './components/regist/regist.component';
 import { MytourComponent } from './components/mytour/mytour.component';
 import { AddcompanyComponent } from './components/addcompany/addcompany.component';
 import { UsersafeComponent } from './components/usersafe/usersafe.component';
+import { MycompanyComponent } from './components/mycompany/mycompany.component';
 
 const routes: Routes = [
   {path:'',component:MainComponent,children:[
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path:'companydetail',component:CompanydetailComponent},
     {path:'mytour',component:MytourComponent},
     {path:'addcompany',component:AddcompanyComponent},
-    {path:'usersafe',component:UsersafeComponent}
+    {path:'usersafe',component:UsersafeComponent},
+    {path:'mycompany',component:MycompanyComponent},
   ]},
   {path:'login',component:LoginComponent},
   {path:'regist',component:RegistComponent},

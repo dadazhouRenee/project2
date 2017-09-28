@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
 declare var $: any;
 @Component({
   selector: 'app-companyindex',
@@ -8,7 +9,7 @@ declare var $: any;
 })
 export class CompanyindexComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private us:UserService) { }
 
   ngOnInit() {
     $(function(){
@@ -29,10 +30,26 @@ export class CompanyindexComponent implements OnInit {
   }
 
   toCompanyDetail(){
-    this.router.navigate(['companydetail']);
+    this.us.checkLogin().subscribe((data)=>{
+      let result = data.json();
+      if(result.status){
+        this.router.navigate(['companydetail']);
+        return;
+      }else{
+        this.router.navigate(['/login']);
+      }
+    });
   }
   toaddcompany(){
-    this.router.navigate(['addcompany']);
+    this.us.checkLogin().subscribe((data)=>{
+      let result = data.json();
+      if(result.status){
+        this.router.navigate(['addcompany']);
+        return;
+      }else{
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
 }
