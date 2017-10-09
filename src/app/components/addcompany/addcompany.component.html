@@ -17,7 +17,7 @@
           <span style="color:red">*</span>活动标题
         </label>
         <div class="col-xs-10 col-sm-10 col-lg-10">
-          <input type="text" class="form-control" id="title" placeholder="一句话开始一段靠谱的旅程">
+          <input type="text" class="form-control" id="title" placeholder="一句话开始一段靠谱的旅程" name="title" [(ngModel)]="together.title">
         </div>
       </div>
       <!-- 联系方式 -->
@@ -27,15 +27,15 @@
           </label>
           <div class="input-group col-xs-2 col-sm-2 col-lg-2 shouji">
               <span class="input-group-addon">手机/</span>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" name="tel" [(ngModel)]="together.tel" />
           </div>
           <div class="input-group col-xs-2 col-sm-2 col-lg-2 qq">
               <span class="input-group-addon">QQ/</span>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" name="qq" [(ngModel)]="together.qq" />
           </div>
           <div class="input-group col-xs-2 col-sm-2 col-lg-2 weixin">
               <span class="input-group-addon">微信/</span>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" name="weixin" [(ngModel)]="together.weixin"/>
           </div>
           <div class="col-xs-2 col-sm-2 col-lg-2 choosewrite">
             (可选填)
@@ -48,7 +48,7 @@
             <span style="color:red">*</span>目的地
           </label>
           <div class="col-xs-6 col-sm-6 col-lg-6">
-            <input type="text" class="form-control" id="dest" placeholder="请输入目的地">
+            <input type="text" class="form-control" id="dest" placeholder="请输入目的地"  name="toCity" [(ngModel)]="together.toCity">
           </div>
       </div>
       <!-- 出发地 -->
@@ -57,7 +57,7 @@
             <span style="color:red">*</span>出发地
           </label>
           <div class="col-xs-6 col-sm-6 col-lg-6">
-            <input type="text" class="form-control" id="startplace" placeholder="输入出发地">
+            <input type="text" class="form-control" id="startplace" placeholder="输入出发地" name="fromCity" [(ngModel)]="together.fromCity">
           </div>
       </div>
       <!-- 出发时间 -->
@@ -66,7 +66,7 @@
             <span style="color:red">*</span>出发时间
           </label>
           <div class="col-xs-6 col-sm-6 col-lg-6">
-            <input type="text" class="form-control" id="datepicker" placeholder="出发日期">
+            <input type="text" class="form-control" id="datepicker" placeholder="出发日期" name="startDate" [(ngModel)]="together.startDate">
           </div>
       </div>
       <!-- 活动天数 -->
@@ -75,7 +75,7 @@
             <span style="color:red">*</span>活动天数
           </label>
           <div class="col-xs-6 col-sm-6 col-lg-6">
-            <input type="text" class="form-control" id="duration">
+            <input type="text" class="form-control" id="duration"  name="lastDays" [(ngModel)]="together.lastDays">
           </div>
           <div class="col-xs-1 col-sm-1 col-lg-1 duration_txt">
               天
@@ -87,7 +87,7 @@
             <span style="color:red">*</span>限制人数
           </label>
           <div class="col-xs-6 col-sm-6 col-lg-6">
-            <input type="text" class="form-control" id="limit">
+            <input type="text" class="form-control" id="limit" name="limitNum" [(ngModel)]="together.limitNum">
           </div>
           <div class="col-xs-1 col-sm-1 col-lg-1 limit_txt">
             人
@@ -102,7 +102,7 @@
             <textarea  id="descibe" placeholder="尽可能详细讲你的意向说清楚，除非你愿意尝试下边的:
 a.如果你想结伴无人问津
 b.如果你想浪费更多时间在逐个沟通相同的问题
-c.如果你想让旅途遇到猪队友"></textarea>
+c.如果你想让旅途遇到猪队友" name="intro" [(ngModel)]="together.intro"></textarea>
           </div>
       </div>
       <!-- 封面图片 -->
@@ -112,9 +112,10 @@ c.如果你想让旅途遇到猪队友"></textarea>
           </label>
           <div class="col-xs-4 col-sm-2 col-lg-1">
               <div class="addimg">
-                <img src="assets/img/add.png">
+                <input #file type="file" style="display:none" ng2FileSelect [uploader]="uploader" (change)="selectFile($event)">
+                <img src="{{imgUrl}}" (click)="clickFile()" >
               </div>
-              <div class="coverimg_btn">
+              <div class="coverimg_btn" (click)="addCompany()"> 
                 发表结伴
               </div>
           </div>

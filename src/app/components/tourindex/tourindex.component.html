@@ -54,28 +54,30 @@
       <!-- 具体细节开始 -->
       <div class="row">
         <!-- 每一个单独的开始 -->
-        <div class="col-lg-6 col-md-6 col-xs-6 each" (click)="toTourDetail()">
+        <div class="col-lg-6 col-md-6 col-xs-6 each" *ngFor="let tour of tours">
           <div class="row">
             <div class="col-lg-4 col-xs-4 each_left">
-                <p class="type"><strong><strong>出游攻略</strong></strong></p>
-                <p class="publicdate">发布时间：2017年9月16日</p>
+                <p class="type"><strong><strong>{{tour.type}}</strong></strong></p>
+                <p class="publicdate">发布时间：{{tour.publishDate}}</p>
                 <p class="author">作者</p>
-                <img src="assets/img/userImg/user01.jpeg">
-                <p class="fc">暖暖的旅行</p>
+                <img src="/tournote/img/{{tour.userImgUrl}}">
+                <p class="fc">{{tour.nikeName}}</p>
             </div>
-            <div class="col-lg-8 col-xs-8 each_right">
+            <div class="col-lg-8 col-xs-8 each_right" [routerLink]="['/tourdetail',tour.tid]">
                 <div>
-                  <img src="assets/img/artimg/art (1).jpeg">
+                  <div class="each_right_img">
+                     <img src="/tournote/img/{{tour.contentImg}}">
+                  </div>
                   <div class="each_right_txt">
-                    <p class="fc">山西所见---崛围山感受秋之美</p>
-                    <p>时间：10月19日 地点：崛围山（太原市西北方向-呼延村） 人物：用字、于都、包子、阿紫、tiger......</p>
+                    <p class="fc">{{tour.title}}</p>
+                    <p>{{tour.content}}</p>
                   </div>
                 </div>
             </div>
           </div>
         </div>
         <!-- 每一个单独的结束 -->
-        <div class="col-lg-6 col-md-6 col-xs-6 each">
+        <!-- <div class="col-lg-6 col-md-6 col-xs-6 each">
             <div class="row">
               <div class="col-lg-4 col-xs-4 each_left">
                   <p class="type"><strong><strong>出游攻略</strong></strong></p>
@@ -175,47 +177,7 @@
                   </div>
               </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 each">
-            <div class="row">
-              <div class="col-lg-4 col-xs-4 each_left">
-                  <p class="type"><strong><strong>出游攻略</strong></strong></p>
-                  <p class="publicdate">发布时间：2017年9月16日</p>
-                  <p class="author">作者</p>
-                  <img src="assets/img/userImg/user01.jpeg">
-                  <p class="fc">暖暖的旅行</p>
-              </div>
-              <div class="col-lg-8 col-xs-8 each_right">
-                  <div>
-                    <img src="assets/img/artimg/art (1).jpeg">
-                    <div class="each_right_txt">
-                      <p class="fc">山西所见---崛围山感受秋之美</p>
-                      <p>时间：10月19日 地点：崛围山（太原市西北方向-呼延村） 人物：用字、于都、包子、阿紫、tiger......</p>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-6 each">
-            <div class="row">
-              <div class="col-lg-4 col-xs-4 each_left">
-                  <p class="type"><strong><strong>出游攻略</strong></strong></p>
-                  <p class="publicdate">发布时间：2017年9月16日</p>
-                  <p class="author">作者</p>
-                  <img src="assets/img/userImg/user01.jpeg">
-                  <p class="fc">暖暖的旅行</p>
-              </div>
-              <div class="col-lg-8 col-xs-8 each_right">
-                  <div>
-                    <img src="assets/img/artimg/art (1).jpeg">
-                    <div class="each_right_txt">
-                      <p class="fc">山西所见---崛围山感受秋之美</p>
-                      <p>时间：10月19日 地点：崛围山（太原市西北方向-呼延村） 人物：用字、于都、包子、阿紫、tiger......</p>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
+        </div> -->
        
       <!-- 具体细节结束 -->
       <!-- 加载更多 -->

@@ -5,7 +5,7 @@
       <div class="col-xs-12 col-lg-12 head">
         <img src="assets/img/jieban/temp.jpeg" alt="">
         <div class="head_txt">
-            国庆七天甘南游，旅程因你而精彩
+            {{together.title}}------
         </div>
       </div>
     </div>
@@ -17,17 +17,17 @@
       <div class="col-xs-8 col-lg-8">
         <!-- title开始 -->
         <div class="left_title">
-            国庆七天甘南游，旅程因你而精彩
+            {{together.title}}
         </div>
         <div class="left_title_detail">
-          <p>出发地：兰州</p>
-          <p>出发时间：2017-10-01</p>
-          <p>目的地：四川|青海|甘肃|甘南</p>
-          <p>大约：7天</p>
-          <p>希望人数：6人</p>
+          <p>出发地：{{together.toCity}}</p>
+          <p>出发时间：{{together.startDate}}</p>
+          <p>目的地：{{together.fromCity}}</p>
+          <p>大约：{{together.lastDays}}天</p>
+          <p>希望人数：{{together.limitNum}}人</p>
           <p>发布人：
-            <img src="assets/img/userImg/user01.jpeg" >
-            <span style="color:#fc7200">沧海一粟</span>
+            <img src="tournote/img/{{together.userImgUrl}}" >
+            <span style="color:#fc7200">{{together.nikeName}}</span>
           </p>
         </div>
         <!-- title结束 -->
@@ -37,13 +37,13 @@
         </div>
         <div class="left_middle_detail">
           <p>
-              椎间盘纤维环及其附近结缔组织纤维化和骨化，以及关节强直为病变特点的慢性炎性疾病。强直性脊柱炎属风湿病范畴，病因尚不明确，是以脊柱为主要病变部位的慢性病，累及骶髂关节，引起脊柱强直和纤维化，造成不同程度眼、肺、肌肉、骨骼病变，是自身免疫性疾病。
+            {{together.intro}}
           </p>
         </div>
         <!-- middle结束 -->
         <!-- bottom开始 -->
         <div class="left_bottom">
-          我要报名
+          我要报名1
         </div>
         <!-- 报名表单开始 -->
         <div class="row">
@@ -54,7 +54,7 @@
                   结伴人数
                 </label>
                 <div class="col-sm-10  col-lg-10">
-                  <input type="text" class="form-control" id="companycount">
+                  <input type="text" class="form-control" id="companycount" name="number" [(ngModel)]="number">
                 </div>
               </div>
               <!-- 联系电话 -->
@@ -63,7 +63,7 @@
                       联系电话
                   </label>
                   <div class="col-sm-10  col-lg-10">
-                    <input type="text" class="form-control" id="tel">
+                    <input type="text" class="form-control" id="tel" name="tel" [(ngModel)]="tel">
                   </div>
               </div>
               <!-- 同行人数 -->
@@ -74,10 +74,10 @@
                   <div class="col-sm-10  col-lg-10">
                     <div class="row">
                       <div class="col-sm-6 col-lg-6">
-                        <input type="text" class="form-control" id="male">&nbsp;&nbsp;男/人
+                        <input type="text" class="form-control" id="male" name="male" [(ngModel)]="male">&nbsp;&nbsp;男/人
                       </div>
                       <div class="col-sm-6 col-lg-6">
-                          <input type="text" class="form-control" id="female">&nbsp;&nbsp;女/人
+                          <input type="text" class="form-control" id="female" name="female" [(ngModel)]="female">&nbsp;&nbsp;女/人
                       </div>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
                 <div class="col-sm-2 col-lg-2">
 
                 </div>
-                <div class="form-control bottom_btn col-sm-10  col-lg-10">
+                <div class="form-control bottom_btn col-sm-10  col-lg-10" (click)="doapply()">
                   报名
                 </div>
               </div>
@@ -103,54 +103,18 @@
       <div class="col-xs-4 col-lg-4">
         <!-- 右侧报名人数 -->
         <div class="right_count">
-          <span style="color:#ff8a00">10</span>人报名
+          <span style="color:#ff8a00">{{count}}</span>人报名
         </div>
-        <!-- 右侧评论用户 -->
+        <!-- 右侧报名用户 -->
          
        
          <div class="row right_user"> 
-           <!-- 每一个评论用户开始 -->
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
+           <!-- 每一个报名用户开始 -->
+           <div class="col-lg-3 col-xs-3 each" *ngFor="let item of join" >
+              <div class="each_img"><img src="tournote/img/{{item.userImgUrl}}" ></div>
+              <div class="each_author">{{item.nikeName}}</div>
            </div>   
-           <!-- 每一个评论用户结束 -->
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div> 
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
-           <div class="col-lg-3 col-xs-3 each">
-              <div class="each_img"><img src="assets/img/userImg/user01.jpeg" ></div>
-              <div class="each_author">芝麻</div>
-           </div>
+           <!-- 每一个报名用户结束 -->
          </div>
           
 

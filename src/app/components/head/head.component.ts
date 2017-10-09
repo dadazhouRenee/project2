@@ -25,9 +25,9 @@ export class HeadComponent implements OnInit {
   }
   quit(){
     this.us.quit().subscribe();
-    // this.router.navigate[('/tourindex')];
     this.userStatus=false;
     this.user = {};
+    this.router.navigate(['/']);
   }
 
 }

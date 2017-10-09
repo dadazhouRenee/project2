@@ -12,18 +12,23 @@ import { MytourComponent } from './components/mytour/mytour.component';
 import { AddcompanyComponent } from './components/addcompany/addcompany.component';
 import { UsersafeComponent } from './components/usersafe/usersafe.component';
 import { MycompanyComponent } from './components/mycompany/mycompany.component';
+import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { UserimgComponent } from './components/userimg/userimg.component';
+import { AuthService } from './services/auth/auth.service';
 
 const routes: Routes = [
   {path:'',component:MainComponent,children:[
     {path:'',component:TourindexComponent},
     {path:'tourindex',component:TourindexComponent},
-    {path:'addtour',component:AddtourComponent},
-    {path:'tourdetail',component:TourdetailComponent},
+    {path:'addtour',component:AddtourComponent,canActivate:[AuthService]},
+    {path:'tourdetail/:tid',component:TourdetailComponent},
     {path:'companyindex',component:CompanyindexComponent},
-    {path:'companydetail',component:CompanydetailComponent},
+    {path:'companydetail/:tid',component:CompanydetailComponent},
     {path:'mytour',component:MytourComponent},
-    {path:'addcompany',component:AddcompanyComponent},
+    {path:'addcompany',component:AddcompanyComponent,canActivate:[AuthService]},
     {path:'usersafe',component:UsersafeComponent},
+    {path:'userinfo',component:UserinfoComponent},
+    {path:'userimg',component:UserimgComponent},
     {path:'mycompany',component:MycompanyComponent},
   ]},
   {path:'login',component:LoginComponent},

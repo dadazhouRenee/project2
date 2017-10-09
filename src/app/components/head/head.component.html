@@ -1,5 +1,5 @@
 
-  <nav class="navbar">
+  <nav class="navbar" id="top">
     <div class="container-fluid">
         <!-- logo部分 -->
         <div class="navbar-header logo">
@@ -26,7 +26,7 @@
           <li *ngIf="!userStatus"><a routerLink="/regist">注册</a></li>
           <li class="dropdown" *ngIf="userStatus">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/tournote/img/{{user.userImgUrl}}">
+              <img src="/tournote/img/{{user.userImgUrl}}" id="userImg">
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">

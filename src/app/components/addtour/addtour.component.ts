@@ -3,6 +3,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { UEditorComponent } from '_ngx-ueditor@1.0.7@ngx-ueditor';
 import { Tour } from '../../extras/tour';
 import { TournoteService } from '../../services/tournote/tournote.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addtour',
@@ -21,7 +22,7 @@ export class AddtourComponent implements OnInit {
     itemAlias:"uploadedfile"
   });
 
-  constructor(private ts :TournoteService) { }
+  constructor(private ts :TournoteService,private router:Router) { }
 
   ngOnInit() {
    
@@ -69,7 +70,11 @@ export class AddtourComponent implements OnInit {
       this.tour.contentImg = data.imgUrl;
       console.log(this.tour.contentImg);
       this.ts.publish(this.tour).subscribe((data)=>{
+        let result = data.json();
         console.log(data.json);
+        if(result.code=="success"){
+          this.router.navigate(['/tourindex']);
+        }
       })
     });
   }

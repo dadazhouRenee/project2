@@ -124,9 +124,9 @@
   <div class="row">
     <div class="col-xs-12 col-md-12 col-lg-12 middle_bottom">
        <form>
-          <input type="text" placeholder="目的的" name="destination">&nbsp;
-          <input type="date" placeholder="出发时间" name="startdate">&nbsp;
-          <button class="btn btn-primary">
+          <input type="text" placeholder="目的的" name="destination" [(ngModel)]="destination">&nbsp;
+          <input type="text" placeholder="出发时间" name="startdate"  id="datepicker" [(ngModel)]="startdate">&nbsp;
+          <button class="btn btn-primary" (click)="search()">
             <span class="glyphicon glyphicon-search"></span>查询
           </button>
           <div class="pull-right middle_add" (click)="toaddcompany()">
@@ -146,202 +146,31 @@
         <div class="col-xs-12 col-md-12 col-lg-12 ">
           <div class="each_container ">
               <!-- 每一个计划start -->
-              <div class="everyone" (click)="toCompanyDetail()">
+              <div class="everyone" *ngFor="let item of companies;index as i" [routerLink]="'/companydetail/'+item.tid">
                 <!-- 顶部图片部分start -->
                 <div class="everyone_img">
-                  <img src="assets/img/destination/address (1).jpeg">
+                  <img src="/tournote/img/{{item.coverImg}}">
                   <div class="everyone_img_txt">
-                    <span>12</span>天后
+                    <span>{{item.day}}</span>天后
                   </div> 
                 </div>
                 <div class="line"></div>
                 <!-- 顶部图片部分start -->
                 <!-- 每一个的内容部分each_content开始 -->
                 <div class="each_content">
-                  <p class="first">曼谷</p>
-                  <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
+                  <p class="first">{{item.toCity}}</p>
+                  <p class="second">{{item.intro}}</p>
                   <div class="each_content_img">
-                    <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
+                    <img src="/tournote/img/{{item.userImgUrl}}">&nbsp;&nbsp;{{item.nikeName}}
                   </div>
                   <div class="each_content_bottom">
-                    <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
+                    <div class="each_content_bottom_txt">已有<span>{{item.count}}</span>人加入</div>
                     <div class="each_content_bottom_img pull-right"></div>
                   </div>
                 </div>
                 <!-- 每一个的内容部分each_content结束 -->
               </div>
               <!-- 每一个计划end -->
-
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              <div class="everyone">
-                  <!-- 顶部图片部分start -->
-                  <div class="everyone_img">
-                    <img src="assets/img/destination/address (1).jpeg">
-                    <div class="everyone_img_txt">
-                      <span>12</span>天后
-                    </div> 
-                  </div>
-                  <div class="line"></div>
-                  <!-- 顶部图片部分start -->
-                  <!-- 每一个的内容部分each_content开始 -->
-                  <div class="each_content">
-                    <p class="first">曼谷</p>
-                    <p class="second">我俩89年的，山东人，性格开朗，不矫情不墨迹，我们机票酒店...</p>
-                    <div class="each_content_img">
-                      <img src="assets/img/userImg/user01.jpeg">&nbsp;&nbsp;沧海一粟
-                    </div>
-                    <div class="each_content_bottom">
-                      <div class="each_content_bottom_txt">已有<span>16</span>人加入</div>
-                      <div class="each_content_bottom_img pull-right"></div>
-                    </div>
-                  </div>
-                  <!-- 每一个的内容部分each_content结束 -->
-              </div>
-              
-
           </div>
         </div>
       </div>

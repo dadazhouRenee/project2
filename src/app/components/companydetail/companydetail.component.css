@@ -80,6 +80,7 @@
 }
 .each_img img{
     width: 60px;
+    height: 60px;
     border-radius: 100%;
 }
 .each_author{

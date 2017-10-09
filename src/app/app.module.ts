@@ -26,6 +26,9 @@ import { MytourComponent } from './components/mytour/mytour.component';
 import { TournoteService } from './services/tournote/tournote.service';
 import { CommonModule } from '@angular/common';
 import { FileUploadModule } from 'ng2-file-upload'
+import { CommentService } from './services/comment/comment.service';
+import { AuthService } from './services/auth/auth.service';
+import { TogetherService } from './services/together/together.service';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { FileUploadModule } from 'ng2-file-upload'
   providers: [
     UEditorConfig,
     UserService,
+    CommentService,
+    AuthService,
+    TogetherService,
     TournoteService
   ],
   bootstrap: [AppComponent]

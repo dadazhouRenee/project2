@@ -2,14 +2,14 @@
     <div class="row">
       <!-- 左侧开始 -->
       <div class="col-lg-3 col-xs-3">
-        <div class="bs bactive">
-          <span class="glyphicon glyphicon-user"></span>&nbsp;<a href="#">我的信息</a>  
+        <div class="bs">
+          <span class="glyphicon glyphicon-user"></span>&nbsp;<a routerLink="/userinfo">我的信息</a>  
         </div>
         <div class="bs ">
-          <span class="glyphicon glyphicon-facetime-video"></span>&nbsp;<a href="#">我的头像</a>
+          <span class="glyphicon glyphicon-facetime-video"></span>&nbsp;<a routerLink="/userimg">我的头像</a>
         </div>
-        <div class="bs">
-          <span class="glyphicon glyphicon-lock"></span>&nbsp;<a href="#">账号安全</a>
+        <div class="bs bactive">
+          <span class="glyphicon glyphicon-lock"></span>&nbsp;<a routerLink="/usersafe">账号安全</a>
         </div>
       </div>
       <!-- 左侧结束 -->
@@ -21,7 +21,7 @@
             <div class="form-group">
               <label for="name" class="col-sm-2 control-label">名号</label>
               <div class="col-sm-4">
-                <input type="password" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" name="nikeName" [(ngModel)]="nikeName">
               </div>
             </div>
             <div class="form-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn save_btn">保存修改</button>
+                <button type="submit" class="btn save_btn" (click)="doUpdateName()">保存修改</button>
               </div>
             </div>
             </form>
